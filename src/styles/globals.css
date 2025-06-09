@@ -1,26 +1,40 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@font-face {
+  font-family: "InstrumentSansRegular";
+  src: url("../../public/assets/fonts/static/InstrumentSans-Regular.ttf");
+  font-display: swap;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@font-face {
+  font-family: "InstrumentSansBold";
+  src: url("../../public/assets/fonts/static/InstrumentSans-Bold.ttf");
+  font-display: swap;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@font-face {
+  font-family: "InstrumentSansSemiBold";
+  src: url("../../public/assets/fonts/static/InstrumentSans-SemiBold.ttf");
+  font-display: swap;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@font-face {
+  font-family: "Nayuki";
+  src: url("../../public/assets/fonts/static/nayuki.28a6a2339baca9cb6372.ttf");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Outfit";
+  src: url("../../public/assets/fonts/static/Outfit-VariableFont_wght.00c2ed1a3bf798b0da27.ttf");
+  font-display: swap;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Outfit";
 }

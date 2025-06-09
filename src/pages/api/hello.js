@@ -1,5 +1,11 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
-export default function handler(req, res) {
-  res.status(200).json({ name: "John Doe" });
+export default async function handler(req, res) {
+  const reqBody = await request.json();
+  console.log("Request ", reqBody);
+  if (req.method === "POST") {
+    res.status(200).json({ message: "Send OTP" });
+  } else {
+    res.status(404).json({ message: "Invalid Request" });
+  }
 }
