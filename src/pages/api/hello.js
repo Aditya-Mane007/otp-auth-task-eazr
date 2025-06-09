@@ -2,7 +2,6 @@
 
 export default async function handler(req, res) {
   const reqBody = await request.json();
-  console.log("Request ", reqBody);
   if (req.method === "POST") {
     res.status(200).json({ message: "Send OTP" });
   } else {
