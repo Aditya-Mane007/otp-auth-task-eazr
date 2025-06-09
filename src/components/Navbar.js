@@ -5,7 +5,6 @@ import toast from "react-hot-toast";
 
 function Navbar() {
   const router = useRouter();
-
   const logoutHandler = async () => {
     try {
       const res = await fetch("/api/logout");
