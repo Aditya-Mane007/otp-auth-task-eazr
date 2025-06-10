@@ -38,7 +38,7 @@ function Navbar() {
       <div className="p-4">
         <div className="flex justify-between items-center">
           <Link href="/admin/dashboard" className="text-2xl">
-            Admin Dashboard
+            Admin Panel
           </Link>
 
           <div className="flex justify-center items-center">

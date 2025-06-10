@@ -30,8 +30,8 @@ function UserById({ userData, messageText }) {
   // }, []);
   return (
     <div className="w-full h-full max-w-[1440px] mx-auto flex-1 flex flex-col">
-      <div className="p-4 w-full flex">
-        <div className="w-[10rem] h-[10rem]">
+      <div className="p-4 w-full mx-auto md:flex ">
+        <div className="w-[10rem] h-[10rem] mx-auto">
           <Image
             src="/No_image_available.svg.webp"
             width={100}
@@ -40,10 +40,10 @@ function UserById({ userData, messageText }) {
             alt={userData.name}
           />
         </div>
-        <div className="w-full text-xl px-4 flex flex-col items-start justify-center">
-          <p>Name : {userData.name}</p>
-          <p>Email : {userData.email}</p>
-          <p>Phone : {userData.phone}</p>
+        <div className="w-full text-xl px-4 mx-auto flex flex-col items-center md:items-start justify-center ">
+          <div>Name : {userData.name}</div>
+          <div>Email : {userData.email}</div>
+          <div>Phone : {userData.phone}</div>
         </div>
       </div>
       <div className="flex-1 text-xl flex justify-center items-center border-t-2 border-PrimaryGray">
