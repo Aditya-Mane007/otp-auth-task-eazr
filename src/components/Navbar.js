@@ -2,6 +2,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
+import { LuLogOut } from "react-icons/lu";
 
 function Navbar() {
   const [user, setUser] = useState("");
@@ -40,12 +41,13 @@ function Navbar() {
           </Link>
 
           <div className="flex justify-center items-center">
-            <div className="mx-4 text-xl">Hello, {user}</div>
+            <div className="mx-2 sm:mx-4 text-lg">Hello, {user}</div>
             <button
-              className="px-4 py-2 rounded-[.5rem] border-2 border-Green text-Green font-bold hover:bg-Green/20"
+              className="px-4 py-2 rounded-[.5rem] border-2 border-Green text-Green font-bold hover:bg-Green/20 flex items-center text-xl"
               onClick={logoutHandler}
             >
-              Logout
+              <LuLogOut size={20} className="mx-2" />
+              <span className="hidden md:block">Logout</span>
             </button>
           </div>
         </div>
