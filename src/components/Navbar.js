@@ -1,9 +1,10 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 
 function Navbar() {
+  const [user, setUser] = useState("");
   const router = useRouter();
   const logoutHandler = async () => {
     try {
@@ -16,6 +17,8 @@ function Navbar() {
 
       toast.success(data.message);
 
+      localStorage.removeItem("User");
+
       setTimeout(() => {
         router.push("/admin/login");
       }, 1000);
@@ -24,14 +27,20 @@ function Navbar() {
     }
   };
 
+  useEffect(() => {
+    setUser(JSON.parse(localStorage.getItem("User")).name);
+  }, []);
+
   return (
     <nav className="w-full h-full max-w-[1440px] mx-auto">
       <div className="p-4">
         <div className="flex justify-between items-center">
-          <Link href="/" className="text-2xl">
+          <Link href="/admin/dashboard" className="text-2xl">
             Admin Dashboard
           </Link>
-          <div>
+
+          <div className="flex justify-center items-center">
+            <div className="mx-4 text-xl">Hello, {user}</div>
             <button
               className="px-4 py-2 rounded-[.5rem] border-2 border-Green text-Green font-bold hover:bg-Green/20"
               onClick={logoutHandler}

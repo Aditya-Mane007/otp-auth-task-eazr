@@ -32,10 +32,12 @@ function index() {
 
         const data = await res.json();
 
+        localStorage.setItem("User", JSON.stringify(data.user));
+
         toast.success(data.message);
 
         setTimeout(() => {
-          router.push("/");
+          router.push("/admin/dashboard");
         }, 1000);
       } catch (error) {
         toast.error(error);

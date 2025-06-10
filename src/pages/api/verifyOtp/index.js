@@ -19,8 +19,8 @@ export default async function handler(req, res) {
       }
 
       const userData = {
-        id: "123456789",
         name: "Admin",
+        id: "123456789",
         contactNumber: "7710957578",
       };
 
@@ -36,7 +36,9 @@ export default async function handler(req, res) {
       });
 
       res.setHeader("Set-Cookie", cookie);
-      return res.status(200).json({ message: "Login successful" });
+      return res
+        .status(200)
+        .json({ user: userData, message: "Login successful" });
     } catch (error) {
       return res.status(500).json({ message: "Internal Server Error" });
     }
