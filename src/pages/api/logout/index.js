@@ -6,8 +6,9 @@ export default async function handler(req, res) {
       const cookie = serialize("token", "", {
         httpOnly: true,
         secure: process.env.NODE_ENV === "production",
-        maxAge: 0,
+        sameSite: "strict",
         path: "/",
+        maxAge: 0,
       });
 
       res.setHeader("Set-Cookie", cookie);

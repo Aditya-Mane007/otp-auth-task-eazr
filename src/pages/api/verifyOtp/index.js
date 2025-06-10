@@ -31,8 +31,9 @@ export default async function handler(req, res) {
       const cookie = serialize("token", token, {
         httpOnly: true,
         secure: process.env.NODE_ENV === "production",
-        maxAge: 3 * 24 * 60 * 60 * 1000,
+        sameSite: "strict",
         path: "/",
+        maxAge: 3 * 24 * 60 * 60 * 1000,
       });
 
       res.setHeader("Set-Cookie", cookie);
