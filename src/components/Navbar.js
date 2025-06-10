@@ -9,7 +9,10 @@ function Navbar() {
   const router = useRouter();
   const logoutHandler = async () => {
     try {
-      const res = await fetch("/api/logout");
+      const res = await fetch("/api/logout", {
+        credentials: "include",
+        method: "GET",
+      });
       const data = await res.json();
 
       if (!res.ok) {
