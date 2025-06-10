@@ -29,6 +29,10 @@ export default async function handler(req, res) {
       });
 
       const cookie = serialize("token", token, {
+        domain:
+          process.env.NODE_ENV === "production"
+            ? "otp-auth-task-eazr.vercel.app"
+            : undefined,
         httpOnly: true,
         secure: process.env.NODE_ENV === "production",
         sameSite: "strict",
