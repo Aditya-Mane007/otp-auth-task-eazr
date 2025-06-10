@@ -17,15 +17,13 @@ function Navbar() {
 
       if (!res.ok) {
         toast.error(data.message);
+      } else {
+        toast.success(data.message);
+        localStorage.removeItem("User");
+        setTimeout(() => {
+          router.push("/admin/login");
+        }, 1000);
       }
-
-      toast.success(data.message);
-
-      localStorage.removeItem("User");
-
-      setTimeout(() => {
-        router.push("/admin/login");
-      }, 1000);
     } catch (error) {
       console.log(error);
     }

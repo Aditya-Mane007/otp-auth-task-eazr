@@ -66,9 +66,9 @@ export default function handler(req, res) {
     secure: process.env.NODE_ENV === "production",
     sameSite: "strict",
     path: "/",
-    maxAge: 0, // Immediately expire the cookie
+    maxAge: 0,
   });
 
   res.setHeader("Set-Cookie", [cookie]);
-  return res.status(200).end(); // Don’t send JSON
+  return res.status(200).end();
 }
